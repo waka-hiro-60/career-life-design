@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="キャリア＆ライフデザイン研究所へのお問い合わせ。執筆依頼・講演依頼・感想などお気軽にどうぞ。">
+  <title>お問い合わせ｜キャリア＆ライフデザイン研究所</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green:      #1a4a3a;
+      --green-dark: #0f2f24;
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --cream:      #f8f5f0;
+      --cream-dark: #ede9e2;
+      --text:       #2a2a2a;
+      --text-light: #5a5a5a;
+      --white:      #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.8;
+    }
+
+    /* ── ヘッダー ── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(26,74,58,0.97);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      height: 60px;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .header-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+    .header-logo span {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.08em;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .header-nav {
+      display: flex; gap: 2rem;
+    }
+    .header-nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .header-nav a:hover { color: var(--gold); }
+
+    /* ── ページヘッダー ── */
+    .page-hero {
+      background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 100%);
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+    }
+    .page-hero-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .page-hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+    }
+
+    /* ── フォームセクション ── */
+    .form-section { padding: 5rem 2rem; background: var(--white); }
+    .container { max-width: 700px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+    .divider {
+      width: 40px; height: 2px;
+      background: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── 注意書き ── */
+    .notice-box {
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.25rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.875rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+    .notice-box a {
+      color: var(--green);
+      font-weight: 500;
+    }
+    .notice-box a:hover { color: var(--gold); }
+
+    /* ── フォーム ── */
+    .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: 0.03em;
+    }
+    .form-label .required {
+      color: #c0392b;
+      font-size: 0.75rem;
+      margin-left: 0.35rem;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--cream-dark);
+      background: var(--cream);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      border-radius: 1px;
+      appearance: none;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--green);
+      background: var(--white);
+    }
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235a5a5a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.9rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+    .form-textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+    .form-submit {
+      display: inline-block;
+      padding: 0.85rem 2.5rem;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .form-submit:hover { background: var(--gold-light); }
+
+    /* ── フッター ── */
+    .site-footer { background: var(--green-dark); }
+    .footer-inner {
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+    }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+    }
+    .footer-links {
+      display: flex; justify-content: center;
+      flex-wrap: wrap; gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      padding: 1rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── レスポンシブ ── */
+    @media (max-width: 640px) {
+      .header-nav { display: none; }
+      .form-submit { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="header-logo">
+      協進化ジャーナル
+      <span>Career &amp; Life Design Lab</span>
+    </a>
+    <div class="header-nav">
+      <a href="/journal/">ジャーナル</a>
+      <a href="/books/">書籍</a>
+      <a href="/about/">研究所</a>
+      <a href="/contact/">お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<!-- ページヘッダー -->
+<div class="page-hero">
+  <p class="page-hero-label">Contact</p>
+  <h1>お問い合わせ</h1>
+</div>
+
+<!-- フォーム -->
+<section class="form-section">
+  <div class="container">
+    <p class="section-label">Contact Form</p>
+    <h2 class="section-title">お問い合わせフォーム</h2>
+    <div class="divider"></div>
+
+    <div class="notice-box">
+      社労士相談・障害年金のご相談は
+      <a href="https://career-life.support" target="_blank">career-life.support</a>
+      へお願いします。
+    </div>
+
+    <form class="contact-form" action="" method="post">
+      <div class="form-group">
+        <label class="form-label" for="name">
+          お名前<span class="required">必須</span>
+        </label>
+        <input class="form-input" type="text" id="name" name="name" required placeholder="山田 太郎">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">
+          メールアドレス<span class="required">必須</span>
+        </label>
+        <input class="form-input" type="email" id="email" name="email" required placeholder="example@mail.com">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="type">種別</label>
+        <select class="form-select" id="type" name="type">
+          <option value="">選択してください</option>
+          <option value="writing">執筆依頼</option>
+          <option value="lecture">講演依頼</option>
+          <option value="feedback">感想</option>
+          <option value="other">その他</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">
+          本文<span class="required">必須</span>
+        </label>
+        <textarea class="form-textarea" id="message" name="message" required placeholder="メッセージをご記入ください"></textarea>
+      </div>
+
+      <button class="form-submit" type="submit">送信する</button>
+    </form>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">協進化ジャーナル</p>
+    <p class="footer-tagline">生きることは、育てること。</p>
+    <div class="footer-links">
+      <a href="/journal/">ジャーナル</a>
+      <a href="/books/">書籍</a>
+      <a href="/about/">研究所</a>
+      <a href="https://kyoshinkajournal.substack.com" target="_blank">Substack</a>
+      <a href="/contact/">お問い合わせ</a>
+      <a href="https://career-life.group" target="_blank">career-life.group</a>
+      <a href="https://career-life.tech" target="_blank">career-life.tech</a>
+      <a href="https://career-life.support" target="_blank">career-life.support</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 合同会社 キャリア＆ライフデザイン研究所</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="キャリア＆ライフデザイン研究所。協進化ジャーナル『生きることは、育てること。』時代進による隔週Substack・書籍・研究の発信地。">
+  <title>協進化ジャーナル｜キャリア＆ライフデザイン研究所</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green:      #1a4a3a;
+      --green-dark: #0f2f24;
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --cream:      #f8f5f0;
+      --cream-dark: #ede9e2;
+      --text:       #2a2a2a;
+      --text-light: #5a5a5a;
+      --white:      #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.8;
+    }
+
+    /* ── ヘッダー ── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(26,74,58,0.97);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      height: 60px;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .header-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+    .header-logo span {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.08em;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .header-nav {
+      display: flex; gap: 2rem;
+    }
+    .header-nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .header-nav a:hover { color: var(--gold); }
+
+    /* ── ヒーロー ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 60%, #2a6a52 100%);
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center;
+      padding: 100px 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .hero-tagline {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 2.5rem;
+    }
+    .hero-copy {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 2;
+      max-width: 500px;
+      margin-bottom: 3rem;
+    }
+    .hero-cta {
+      display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 2px;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      font-family: 'Noto Sans JP', sans-serif;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green-dark);
+      font-weight: 500;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.5);
+      color: var(--white);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-scroll {
+      position: absolute; bottom: 2rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.7rem; letter-spacing: 0.15em;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px; height: 40px;
+      background: rgba(255,255,255,0.2);
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ── セクション共通 ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 2.5rem;
+      line-height: 1.4;
+    }
+    .divider {
+      width: 40px; height: 2px;
+      background: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── プロフィール ── */
+    .profile-section { background: var(--white); }
+    .profile-inner {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .avatar {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green) 0%, #2a6a52 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 3.5rem;
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: 0 8px 32px rgba(26,74,58,0.2);
+    }
+    .profile-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.25rem;
+    }
+    .profile-role {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .profile-text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 2;
+      margin-bottom: 1.5rem;
+    }
+    .profile-tags {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--cream-dark);
+      border-radius: 1px;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+    }
+    .link-more {
+      font-size: 0.85rem;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+    .link-more:hover { color: var(--gold); }
+
+    /* ── ジャーナル ── */
+    .journal-section { background: var(--cream); }
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .journal-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .journal-card:hover {
+      box-shadow: 0 8px 24px rgba(26,74,58,0.1);
+      transform: translateY(-3px);
+    }
+    .journal-card-thumb {
+      height: 100px;
+      background: linear-gradient(135deg, var(--green) 0%, #2a6a52 100%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .journal-no {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.8rem;
+      color: rgba(255,255,255,0.3);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+    .journal-no span {
+      font-size: 0.8rem;
+      color: var(--gold);
+      display: block;
+      letter-spacing: 0.1em;
+    }
+    .journal-card-body { padding: 1.25rem; }
+    .journal-card-date {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
+    .journal-card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+    .journal-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    .text-center { text-align: center; }
+
+    /* ── 書籍 ── */
+    .kindle-section { background: var(--green); }
+    .kindle-section .section-title { color: var(--gold); }
+    .kindle-section .section-label { color: rgba(201,168,76,0.7); }
+    .kindle-section .divider { background: var(--gold); opacity: 0.4; }
+    .book-card {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 2.5rem;
+      max-width: 700px;
+    }
+    .book-cover {
+      width: 140px; height: 200px;
+      background: linear-gradient(160deg, #0f2f24 0%, var(--green) 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 6px 6px 20px rgba(0,0,0,0.4);
+      position: relative;
+    }
+    .book-cover::after {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 6px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+    .book-cover-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.6;
+      letter-spacing: 0.05em;
+    }
+    .book-cover-sub {
+      font-size: 0.6rem;
+      color: var(--gold);
+      margin-top: 0.5rem;
+      letter-spacing: 0.08em;
+    }
+    .book-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+    .book-sub {
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .book-desc {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+    .book-price {
+      font-size: 0.8rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── 研究所について ── */
+    .about-section { background: var(--cream-dark); }
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 2.1;
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+    .site-links {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+    }
+    .site-link {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .site-link:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 12px rgba(26,74,58,0.08);
+    }
+    .site-link-icon {
+      width: 32px; height: 32px;
+      background: var(--green);
+      border-radius: 1px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .site-link-text { font-size: 0.82rem; }
+    .site-link-domain {
+      display: block;
+      color: var(--green);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .site-link-desc {
+      display: block;
+      color: var(--text-light);
+      font-size: 0.75rem;
+    }
+
+    /* ── フッター ── */
+    .site-footer {
+      background: var(--green-dark);
+    }
+    .footer-inner {
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+    }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+    }
+    .footer-links {
+      display: flex; justify-content: center;
+      flex-wrap: wrap; gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      padding: 1rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── レスポンシブ ── */
+    @media (max-width: 640px) {
+      .profile-inner { grid-template-columns: 1fr; }
+      .avatar { width: 100px; height: 100px; font-size: 2.5rem; margin: 0 auto; }
+      .book-card { grid-template-columns: 1fr; }
+      .book-cover { width: 120px; height: 170px; margin: 0 auto; }
+      .header-nav { display: none; }
+      .footer-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="header-logo">
+      協進化ジャーナル
+      <span>Career &amp; Life Design Lab</span>
+    </a>
+    <div class="header-nav">
+      <a href="/journal/">ジャーナル</a>
+      <a href="/books/">書籍</a>
+      <a href="/about/">研究所</a>
+      <a href="/contact/">お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <p class="hero-label">協進化ジャーナル</p>
+  <h1>生きることは、<br>育てること。</h1>
+  <p class="hero-tagline">キャリア＆ライフデザイン研究所</p>
+  <p class="hero-copy">
+    菜園で気づいた。AIと共に働いて気づいた。<br>
+    本を書いて気づいた。<br>
+    一方的にコントロールしようとすると、<br>うまくいかない。<br>
+    共に育てることで、自分も育っていく。
+  </p>
+  <div class="hero-cta">
+    <a href="https://kyoshinkajournal.substack.com" class="btn btn-gold" target="_blank">
+      Substackを読む
+    </a>
+    <a href="/books/" class="btn btn-outline">
+      書籍を見る
+    </a>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- プロフィール -->
+<section class="profile-section" id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <div class="divider"></div>
+    <div class="profile-inner">
+      <div class="avatar">時</div>
+      <div>
+        <h2 class="profile-name">時代進</h2>
+        <p class="profile-role">じだい すすむ｜キャリア＆ライフデザイン研究所 主任研究員</p>
+        <p class="profile-text">
+          37年間の会社員経験（IPO・ホールディングス内部監査）を経て、60歳で退職。
+          社会保険労務士・公認情報システム監査人（CISA）の資格を持ちながら、
+          AIと共に書き、作り、発信している。<br><br>
+          社労士・エンジニア・作家——その組み合わせで生きること自体が、
+          人生後半戦の一つのモデルになれると思っています。
+        </p>
+        <div class="profile-tags">
+          <span class="tag">社会保険労務士</span>
+          <span class="tag">宅地建物取引士</span>
+          <span class="tag">CISA</span>
+          <span class="tag">37年の会社員経験</span>
+          <span class="tag">IPO従事</span>
+        </div>
+        <a href="/about/" class="link-more">詳しいプロフィールを読む →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 協進化ジャーナル -->
+<section class="journal-section" id="journal">
+  <div class="container">
+    <p class="section-label">Substack</p>
+    <h2 class="section-title">協進化ジャーナル</h2>
+    <div class="divider"></div>
+    <div class="journal-grid">
+
+      <a href="https://kyoshinkajournal.substack.com" class="journal-card" target="_blank">
+        <div class="journal-card-thumb">
+          <div class="journal-no">
+            <span>No.</span>13
+          </div>
+        </div>
+        <div class="journal-card-body">
+          <p class="journal-card-date">2026年3月</p>
+          <p class="journal-card-title">地図が見えてきた</p>
+          <p class="journal-card-desc">Kindle第1作が生まれた。AIとの協進化で、一人でできる時代になった。</p>
+        </div>
+      </a>
+
+      <a href="https://kyoshinkajournal.substack.com/p/121" class="journal-card" target="_blank">
+        <div class="journal-card-thumb">
+          <div class="journal-no">
+            <span>No.</span>12
+          </div>
+        </div>
+        <div class="journal-card-body">
+          <p class="journal-card-date">2026年1月</p>
+          <p class="journal-card-title">半年間の協進化を振り返る</p>
+          <p class="journal-card-desc">2025年6月から続いた協進化の旅。冬の静寂から、次の春へ。</p>
+        </div>
+      </a>
+
+      <a href="https://kyoshinkajournal.substack.com" class="journal-card" target="_blank">
+        <div class="journal-card-thumb">
+          <div class="journal-no">
+            <span>No.</span>1–11
+          </div>
+        </div>
+        <div class="journal-card-body">
+          <p class="journal-card-date">2025年6月〜12月</p>
+          <p class="journal-card-title">バックナンバー</p>
+          <p class="journal-card-desc">菜園・AI・企業経験・世代間協働。3つの軸が絡み合う11号分の記録。</p>
+        </div>
+      </a>
+
+    </div>
+    <div class="text-center">
+      <a href="https://kyoshinkajournal.substack.com" class="btn btn-gold" target="_blank">
+        すべての記事を読む・購読する
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 書籍 -->
+<section class="kindle-section" id="books">
+  <div class="container">
+    <p class="section-label">Books</p>
+    <h2 class="section-title">書籍</h2>
+    <div class="divider"></div>
+    <div class="book-card">
+      <div class="book-cover">
+        <p class="book-cover-title">人生の地図</p>
+        <p class="book-cover-sub">四世代への手紙</p>
+      </div>
+      <div>
+        <h3 class="book-title">人生の地図：四世代への手紙</h3>
+        <p class="book-sub">時代進 著</p>
+        <p class="book-desc">
+          父（84歳）・自分（60歳）・息子（34歳）・孫（4歳）。
+          四世代が同じ時代を生きているこの稀有な瞬間に、
+          伝えておきたいことを手紙の形で書いた。<br><br>
+          「こうしろ」ではなく「父さんはこう考えている」——
+          道の途中にいる者の言葉として。
+        </p>
+        <p class="book-price">電子書籍版 ¥500</p>
+        <a href="#" class="btn btn-gold">Amazonで読む</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 研究所について -->
+<section class="about-section">
+  <div class="container">
+    <p class="section-label">Research Lab</p>
+    <h2 class="section-title">キャリア＆ライフデザイン研究所</h2>
+    <div class="divider"></div>
+    <p class="about-text">
+      人生の後半を、どう設計するか。<br>
+      年金、医療、介護、相続、住まい、仕事——<br>
+      60代が直面するテーマを、バラバラの問題としてではなく、
+      一枚の地図として描いていく場所です。<br><br>
+      専門家として教えるのではなく、
+      同じ道の途中にいる者として、一緒に考えたい。
+    </p>
+    <div class="site-links">
+      <a href="https://career-life.tech" class="site-link" target="_blank">
+        <div class="site-link-icon">T</div>
+        <div class="site-link-text">
+          <span class="site-link-domain">career-life.tech</span>
+          <span class="site-link-desc">無料ツール（名刺帳PWA他）</span>
+        </div>
+      </a>
+      <a href="https://career-life.support" class="site-link" target="_blank">
+        <div class="site-link-icon">S</div>
+        <div class="site-link-text">
+          <span class="site-link-domain">career-life.support</span>
+          <span class="site-link-desc">社労士相談・障害年金支援</span>
+        </div>
+      </a>
+      <a href="https://career-life.group" class="site-link" target="_blank">
+        <div class="site-link-icon">G</div>
+        <div class="site-link-text">
+          <span class="site-link-domain">career-life.group</span>
+          <span class="site-link-desc">グループ概要・会社情報</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">協進化ジャーナル</p>
+    <p class="footer-tagline">生きることは、育てること。</p>
+    <div class="footer-links">
+      <a href="/journal/">ジャーナル</a>
+      <a href="/books/">書籍</a>
+      <a href="/about/">研究所</a>
+      <a href="https://kyoshinkajournal.substack.com" target="_blank">Substack</a>
+      <a href="/contact/">お問い合わせ</a>
+      <a href="https://career-life.group" target="_blank">career-life.group</a>
+      <a href="https://career-life.tech" target="_blank">career-life.tech</a>
+      <a href="https://career-life.support" target="_blank">career-life.support</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 合同会社 キャリア＆ライフデザイン研究所</p>
+  </div>
+</footer>
+
+</body>
+</html>

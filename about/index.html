@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="時代進（じだい すすむ）プロフィールと、キャリア＆ライフデザイン研究所のミッションを紹介します。">
+  <title>キャリア＆ライフデザイン研究所について｜協進化ジャーナル</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green:      #1a4a3a;
+      --green-dark: #0f2f24;
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --cream:      #f8f5f0;
+      --cream-dark: #ede9e2;
+      --text:       #2a2a2a;
+      --text-light: #5a5a5a;
+      --white:      #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.8;
+    }
+
+    /* ── ヘッダー ── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(26,74,58,0.97);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      height: 60px;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .header-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+    .header-logo span {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.08em;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .header-nav {
+      display: flex; gap: 2rem;
+    }
+    .header-nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .header-nav a:hover { color: var(--gold); }
+
+    /* ── ページヘッダー ── */
+    .page-hero {
+      background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 100%);
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+    }
+    .page-hero-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .page-hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+    }
+
+    /* ── セクション共通 ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 860px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+    .divider {
+      width: 40px; height: 2px;
+      background: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── プロフィール詳細 ── */
+    .profile-section { background: var(--white); }
+    .profile-header {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .avatar {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green) 0%, #2a6a52 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 3rem;
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: 0 8px 32px rgba(26,74,58,0.2);
+    }
+    .profile-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.2rem;
+    }
+    .profile-yomi {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
+    .profile-role {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .badge-row {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.85rem;
+      background: var(--green);
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      border-radius: 1px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .profile-body {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 2.1;
+      max-width: 680px;
+    }
+    .profile-body p + p { margin-top: 1.25rem; }
+
+    /* ── タイムライン ── */
+    .timeline { margin-top: 3rem; }
+    .timeline-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    .timeline-list {
+      list-style: none;
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline-list::before {
+      content: '';
+      position: absolute;
+      left: 0.35rem; top: 0.4rem; bottom: 0.4rem;
+      width: 2px;
+      background: var(--cream-dark);
+    }
+    .timeline-list li {
+      position: relative;
+      padding: 0 0 1.5rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .timeline-list li::before {
+      content: '';
+      position: absolute;
+      left: -1.7rem; top: 0.55rem;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+    .timeline-year {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      color: var(--green);
+      margin-right: 0.75rem;
+    }
+
+    /* ── ミッション ── */
+    .mission-section { background: var(--cream-dark); }
+    .mission-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 2.2;
+      max-width: 640px;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.5rem;
+    }
+
+    /* ── 活動一覧 ── */
+    .activities-section { background: var(--white); }
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .activity-card {
+      display: block;
+      padding: 1.5rem;
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .activity-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 16px rgba(26,74,58,0.08);
+      transform: translateY(-2px);
+    }
+    .activity-icon {
+      width: 36px; height: 36px;
+      background: var(--green);
+      border-radius: 1px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .activity-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+    }
+    .activity-desc {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ── CTAセクション ── */
+    .cta-section { background: var(--green); padding: 4rem 2rem; text-align: center; }
+    .cta-section .section-title { color: var(--gold); }
+    .cta-section p { color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 0.95rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 2px;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      font-family: 'Noto Sans JP', sans-serif;
+      transition: all 0.2s;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green-dark);
+      font-weight: 500;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+
+    /* ── フッター ── */
+    .site-footer { background: var(--green-dark); }
+    .footer-inner {
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+    }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+    }
+    .footer-links {
+      display: flex; justify-content: center;
+      flex-wrap: wrap; gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      padding: 1rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── レスポンシブ ── */
+    @media (max-width: 640px) {
+      .profile-header { grid-template-columns: 1fr; }
+      .avatar { width: 100px; height: 100px; font-size: 2.5rem; margin: 0 auto; }
+      .header-nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="header-logo">
+      協進化ジャーナル
+      <span>Career &amp; Life Design Lab</span>
+    </a>
+    <div class="header-nav">
+      <a href="/journal/">ジャーナル</a>
+      <a href="/books/">書籍</a>
+      <a href="/about/">研究所</a>
+      <a href="/contact/">お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<!-- ページヘッダー -->
+<div class="page-hero">
+  <p class="page-hero-label">About</p>
+  <h1>キャリア＆ライフデザイン研究所について</h1>
+</div>
+
+<!-- プロフィール詳細 -->
+<section class="profile-section">
+  <div class="container">
+    <p class="section-label">Profile</p>
+    <h2 class="section-title">時代進</h2>
+    <div class="divider"></div>
+
+    <div class="profile-header">
+      <div class="avatar">時</div>
+      <div>
+        <h3 class="profile-name">時代進</h3>
+        <p class="profile-yomi">じだい すすむ</p>
+        <p class="profile-role">キャリア＆ライフデザイン研究所 主任研究員</p>
+        <div class="badge-row">
+          <span class="badge">社会保険労務士</span>
+          <span class="badge">宅地建物取引士</span>
+          <span class="badge">CISA（公認情報システム監査人）</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-body">
+      <p>60歳で退職して、気づいたことがある。</p>
+      <p>38年間、会社員として走り続けた。IPO（株式上場）の準備、
+      ホールディングスの内部監査、リスク管理——それなりに充実した仕事だった。
+      でも60歳になったとき、地図がなかった。
+      会社というレールが終わった瞬間、どこに向かえばいいかわからなくなった。</p>
+      <p>そのとき始めたのが、菜園だった。
+      野菜を育てようとして気づいた。コントロールしようとするとうまくいかない。
+      野菜の声を聞き、自然のリズムに合わせると、育ってくれる。
+      その感覚を『協進化』と名づけた。</p>
+      <p>今は、AIと一緒に書き、作り、発信している。
+      社労士・エンジニア・作家——この組み合わせで生きていくこと自体が、
+      人生後半戦の一つのモデルになれればと思っている。</p>
+    </div>
+
+    <!-- 経歴タイムライン -->
+    <div class="timeline">
+      <p class="timeline-title">経歴</p>
+      <ul class="timeline-list">
+        <li><span class="timeline-year">1986年</span>大学卒業・入社（会社員生活スタート）</li>
+        <li><span class="timeline-year">1990年代</span>社会保険労務士・宅地建物取引士 取得</li>
+        <li><span class="timeline-year">2000年代</span>事業会社のIPO（株式上場）に従事</li>
+        <li><span class="timeline-year">2010年代</span>ホールディングスの初代内部監査人を務める<br>CISA（公認情報システム監査人）取得</li>
+        <li><span class="timeline-year">2024年</span>社会保険労務士として登録</li>
+        <li><span class="timeline-year">2026年</span>合同会社キャリア＆ライフデザイン研究所 設立<br>Kindle第1作「人生の地図：四世代への手紙」出版</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ミッション -->
+<section class="mission-section">
+  <div class="container">
+    <p class="section-label">Mission</p>
+    <h2 class="section-title">研究所のミッション</h2>
+    <div class="divider"></div>
+    <p class="mission-text">
+      人生の後半を、どう設計するか。<br>
+      年金、医療、介護、相続、住まい、仕事——<br>
+      60代が直面するテーマを一枚の地図として描いていく。<br><br>
+      専門家として教えるのではなく、<br>
+      同じ道の途中にいる者として、一緒に考えたい。
+    </p>
+  </div>
+</section>
+
+<!-- 活動一覧 -->
+<section class="activities-section">
+  <div class="container">
+    <p class="section-label">Activities</p>
+    <h2 class="section-title">活動一覧</h2>
+    <div class="divider"></div>
+    <div class="activity-grid">
+      <a href="https://kyoshinkajournal.substack.com" class="activity-card" target="_blank">
+        <div class="activity-icon">J</div>
+        <p class="activity-name">協進化ジャーナル（Substack）</p>
+        <p class="activity-desc">隔週発行・無料購読。菜園・AI・企業経験を軸に人生後半を探求する。</p>
+      </a>
+      <a href="/books/" class="activity-card">
+        <div class="activity-icon">B</div>
+        <p class="activity-name">書籍</p>
+        <p class="activity-desc">電子書籍・商業出版。60代のキャリア&ライフデザインをテーマにした作品群。</p>
+      </a>
+      <a href="https://career-life.support" class="activity-card" target="_blank">
+        <div class="activity-icon">S</div>
+        <p class="activity-name">社労士相談・障害年金支援</p>
+        <p class="activity-desc">社会保険労務士として個人・企業の社会保障を支援する。</p>
+      </a>
+      <a href="https://career-life.tech" class="activity-card" target="_blank">
+        <div class="activity-icon">T</div>
+        <p class="activity-name">無料ツール</p>
+        <p class="activity-desc">名刺帳PWAなど、生活・仕事を支援する無料Webツールを提供。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="section-title">お問い合わせ</h2>
+    <p>執筆依頼・講演依頼・感想など、お気軽にご連絡ください。</p>
+    <a href="/contact/" class="btn btn-gold">お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">協進化ジャーナル</p>
+    <p class="footer-tagline">生きることは、育てること。</p>
+    <div class="footer-links">
+      <a href="/journal/">ジャーナル</a>
+      <a href="/books/">書籍</a>
+      <a href="/about/">研究所</a>
+      <a href="https://kyoshinkajournal.substack.com" target="_blank">Substack</a>
+      <a href="/contact/">お問い合わせ</a>
+      <a href="https://career-life.group" target="_blank">career-life.group</a>
+      <a href="https://career-life.tech" target="_blank">career-life.tech</a>
+      <a href="https://career-life.support" target="_blank">career-life.support</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 合同会社 キャリア＆ライフデザイン研究所</p>
+  </div>
+</footer>
+
+</body>
+</html>
