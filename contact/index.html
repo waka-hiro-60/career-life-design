@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="キャリア＆ライフデザイン研究所へのお問い合わせ。執筆依頼・講演依頼・感想などお気軽にどうぞ。">
-  <title>お問い合わせ｜キャリア＆ライフデザイン研究所</title>
+  <meta name="description" content="時代進・キャリア＆ライフデザイン研究所へのお問い合わせ。執筆依頼・講演依頼・感想など、お気軽にご連絡ください。">
+  <title>お問い合わせ｜協進化ジャーナル</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -89,116 +89,126 @@
     }
     .page-hero h1 {
       font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
       font-weight: 700;
       color: var(--white);
       letter-spacing: 0.05em;
       line-height: 1.4;
     }
 
-    /* ── フォームセクション ── */
-    .form-section { padding: 5rem 2rem; background: var(--white); }
-    .container { max-width: 700px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-      font-family: 'Noto Sans JP', sans-serif;
-    }
-    .section-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.4rem, 3vw, 1.9rem);
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 2rem;
-      line-height: 1.4;
-    }
+    /* ── セクション共通 ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 680px; margin: 0 auto; }
     .divider {
       width: 40px; height: 2px;
       background: var(--gold);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
-    /* ── 注意書き ── */
-    .notice-box {
-      background: var(--cream);
-      border-left: 3px solid var(--gold);
-      padding: 1rem 1.25rem;
+    /* ── フォームセクション ── */
+    .contact-section { background: var(--white); }
+
+    .contact-lead {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 2;
       margin-bottom: 2.5rem;
-      font-size: 0.875rem;
-      color: var(--text);
-      line-height: 1.8;
     }
-    .notice-box a {
-      color: var(--green);
-      font-weight: 500;
-    }
-    .notice-box a:hover { color: var(--gold); }
 
-    /* ── フォーム ── */
-    .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group {
+      margin-bottom: 1.75rem;
+    }
     .form-label {
-      font-size: 0.875rem;
+      display: block;
+      font-size: 0.82rem;
       font-weight: 500;
-      color: var(--text);
-      letter-spacing: 0.03em;
+      color: var(--green);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
     }
     .form-label .required {
-      color: #c0392b;
-      font-size: 0.75rem;
-      margin-left: 0.35rem;
+      color: var(--gold);
+      margin-left: 0.25rem;
+      font-size: 0.72rem;
     }
     .form-input,
-    .form-select,
-    .form-textarea {
+    .form-textarea,
+    .form-select {
       width: 100%;
-      padding: 0.65rem 0.9rem;
+      padding: 0.75rem 1rem;
       border: 1px solid var(--cream-dark);
       background: var(--cream);
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 0.9rem;
       color: var(--text);
-      outline: none;
-      transition: border-color 0.2s;
-      border-radius: 1px;
+      border-radius: 2px;
+      transition: border-color 0.2s, box-shadow 0.2s;
       appearance: none;
     }
     .form-input:focus,
-    .form-select:focus,
-    .form-textarea:focus {
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
       border-color: var(--green);
-      background: var(--white);
-    }
-    .form-select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235a5a5a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.9rem center;
-      padding-right: 2.5rem;
-      cursor: pointer;
+      box-shadow: 0 0 0 3px rgba(26,74,58,0.08);
     }
     .form-textarea {
-      min-height: 160px;
+      height: 180px;
       resize: vertical;
+      line-height: 1.8;
     }
+    .form-select-wrap {
+      position: relative;
+    }
+    .form-select-wrap::after {
+      content: '▼';
+      position: absolute;
+      right: 1rem; top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.6rem;
+      color: var(--text-light);
+      pointer-events: none;
+    }
+
     .form-submit {
-      display: inline-block;
-      padding: 0.85rem 2.5rem;
-      background: var(--gold);
-      color: var(--green-dark);
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
+      width: 100%;
+      padding: 1rem;
+      background: var(--green);
+      color: var(--gold);
       border: none;
-      border-radius: 2px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       cursor: pointer;
+      border-radius: 2px;
       transition: background 0.2s;
-      align-self: flex-start;
     }
-    .form-submit:hover { background: var(--gold-light); }
+    .form-submit:hover { background: var(--green-dark); }
+    .form-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* ── 送信結果メッセージ ── */
+    .form-message {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      border-radius: 2px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .form-message.success {
+      background: #f0f9f4;
+      border: 1px solid #a8d5b8;
+      color: #1a4a3a;
+    }
+    .form-message.error {
+      background: #fdf0f0;
+      border: 1px solid #e8a8a8;
+      color: #6a1a1a;
+    }
 
     /* ── フッター ── */
     .site-footer { background: var(--green-dark); }
@@ -246,7 +256,7 @@
     /* ── レスポンシブ ── */
     @media (max-width: 640px) {
       .header-nav { display: none; }
-      .form-submit { width: 100%; text-align: center; }
+      .footer-links { gap: 1rem; }
     }
   </style>
 </head>
@@ -275,52 +285,55 @@
 </div>
 
 <!-- フォーム -->
-<section class="form-section">
+<section class="contact-section">
   <div class="container">
-    <p class="section-label">Contact Form</p>
-    <h2 class="section-title">お問い合わせフォーム</h2>
     <div class="divider"></div>
+    <p class="contact-lead">
+      執筆依頼・講演依頼・感想・ご質問など、お気軽にご連絡ください。<br>
+      通常3営業日以内にご返信いたします。
+    </p>
 
-    <div class="notice-box">
-      社労士相談・障害年金のご相談は
-      <a href="https://career-life.support" target="_blank">career-life.support</a>
-      へお願いします。
-    </div>
-
-    <form class="contact-form" action="" method="post">
+    <form id="contactForm">
       <div class="form-group">
         <label class="form-label" for="name">
-          お名前<span class="required">必須</span>
+          お名前<span class="required">*</span>
         </label>
         <input class="form-input" type="text" id="name" name="name" required placeholder="山田 太郎">
       </div>
 
       <div class="form-group">
         <label class="form-label" for="email">
-          メールアドレス<span class="required">必須</span>
+          メールアドレス<span class="required">*</span>
         </label>
-        <input class="form-input" type="email" id="email" name="email" required placeholder="example@mail.com">
+        <input class="form-input" type="email" id="email" name="email" required placeholder="example@email.com">
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="type">種別</label>
-        <select class="form-select" id="type" name="type">
-          <option value="">選択してください</option>
-          <option value="writing">執筆依頼</option>
-          <option value="lecture">講演依頼</option>
-          <option value="feedback">感想</option>
-          <option value="other">その他</option>
-        </select>
+        <label class="form-label" for="subject">
+          お問い合わせの種類<span class="required">*</span>
+        </label>
+        <div class="form-select-wrap">
+          <select class="form-select" id="subject" name="subject" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="執筆依頼">執筆依頼</option>
+            <option value="講演依頼">講演依頼</option>
+            <option value="感想・応援">感想・応援</option>
+            <option value="社労士相談">社労士相談</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
       </div>
 
       <div class="form-group">
         <label class="form-label" for="message">
-          本文<span class="required">必須</span>
+          メッセージ<span class="required">*</span>
         </label>
-        <textarea class="form-textarea" id="message" name="message" required placeholder="メッセージをご記入ください"></textarea>
+        <textarea class="form-textarea" id="message" name="message" required placeholder="メッセージをご記入ください。"></textarea>
       </div>
 
-      <button class="form-submit" type="submit">送信する</button>
+      <button type="submit" class="form-submit" id="submitBtn">送信する</button>
+
+      <div class="form-message" id="formMessage"></div>
     </form>
   </div>
 </section>
@@ -345,6 +358,44 @@
     <p class="footer-copy">© 2026 合同会社 キャリア＆ライフデザイン研究所</p>
   </div>
 </footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const btn = document.getElementById('submitBtn');
+    const msg = document.getElementById('formMessage');
+
+    btn.disabled = true;
+    btn.textContent = '送信中...';
+    msg.style.display = 'none';
+
+    const formData = new FormData(this);
+
+    try {
+      const res = await fetch('https://contact-form.hiroshi-wakabayashi.workers.dev', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (res.ok) {
+        msg.className = 'form-message success';
+        msg.textContent = 'お問い合わせを受け付けました。通常3営業日以内にご返信いたします。';
+        msg.style.display = 'block';
+        this.reset();
+      } else {
+        throw new Error('送信失敗');
+      }
+    } catch (err) {
+      msg.className = 'form-message error';
+      msg.textContent = '送信に失敗しました。時間をおいて再度お試しいただくか、直接メール（contact@career-life.design）にてご連絡ください。';
+      msg.style.display = 'block';
+    }
+
+    btn.disabled = false;
+    btn.textContent = '送信する';
+  });
+</script>
 
 </body>
 </html>
