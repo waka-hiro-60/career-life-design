@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💼 働く｜Q&A | 時代進 キャリア＆ライフデザイン研究所</title>
+<meta name="description" content="定年後の働き方・収入設計・社会保険・週2日モデルの実験——「働く」を問い直す人のための問答集。20問。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #1a4a3a; --green-dark: #0f2f24;
+  --gold: #c9a84c; --cream: #f8f6f2; --cream-d: #f0ece4;
+  --text: #2a2a2a; --muted: #6b6460; --border: #e0dbd2; --white: #ffffff;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans JP', sans-serif; background: var(--cream); color: var(--text); line-height: 1.8; }
+
+.site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(26,74,58,0.97); backdrop-filter: blur(8px); z-index: 100; height: 60px; }
+.header-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.site-logo { font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 1rem; color: var(--gold); text-decoration: none; letter-spacing: 0.05em; line-height: 1.3; }
+.site-logo span { display: block; font-size: 0.65rem; font-weight: 400; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; }
+.header-nav { display: flex; gap: 2rem; }
+.header-nav a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; transition: color 0.2s; }
+.header-nav a:hover { color: var(--gold); }
+.header-nav .nav-qa { color: var(--gold); font-weight: 700; }
+@media (max-width: 640px) { .header-nav { display: none; } }
+
+.breadcrumb { margin-top: 60px; background: var(--cream); border-bottom: 1px solid var(--border); padding: 9px 24px; font-size: 11px; color: var(--muted); }
+.breadcrumb-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.breadcrumb a { color: var(--green); text-decoration: none; }
+
+.cat-hero { background: var(--green); padding: 48px 24px 40px; text-align: center; }
+.cat-hero-emoji { font-size: 40px; margin-bottom: 12px; }
+.cat-hero h1 { font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+.cat-hero p { font-size: 13px; color: rgba(255,255,255,.65); max-width: 560px; margin: 0 auto; line-height: 1.9; }
+
+.main { max-width: 800px; margin: 40px auto; padding: 0 24px 64px; }
+.qa-list { list-style: none; }
+.qa-item { background: var(--white); border: 1px solid var(--border); border-radius: 6px; margin-bottom: 8px; transition: all .2s; }
+.qa-item:hover { border-color: var(--green); box-shadow: 0 2px 8px rgba(26,74,58,.08); }
+.qa-item a { display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px; text-decoration: none; color: var(--text); }
+.qa-item-num { flex-shrink: 0; font-size: 10px; font-weight: 700; font-family: monospace; color: var(--muted); margin-top: 3px; width: 80px; }
+.qa-item-q { font-size: 14px; font-weight: 500; line-height: 1.6; flex: 1; }
+.qa-item:hover .qa-item-q { color: var(--green); }
+.qa-item-arrow { flex-shrink: 0; font-size: 14px; color: var(--border); transition: color .2s; }
+.qa-item:hover .qa-item-arrow { color: var(--green); }
+
+.back-link-wrap { text-align: center; margin-top: 32px; }
+.back-link { color: var(--green); text-decoration: none; font-size: 13px; }
+.back-link:hover { text-decoration: underline; }
+
+.site-footer { background: var(--green-dark); }
+.footer-inner { padding: 3rem 2rem 2rem; text-align: center; }
+.footer-logo { font-family: 'Noto Serif JP', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold); margin-bottom: 0.25rem; }
+.footer-tagline { font-size: 0.8rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; margin-bottom: 2rem; }
+.footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
+.footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-bottom { padding: 1rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); }
+.footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="/">協進化ジャーナル<span>Career &amp; Life Design Lab</span></a>
+    <nav class="header-nav">
+      <a href="/journal/">ジャーナル</a>
+      <a href="/books/">書籍</a>
+      <a href="/qa/" class="nav-qa">Q&amp;A</a>
+      <a href="/about/">研究所</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/">ホーム</a><span>›</span>
+    <a href="/qa/">Q&amp;A</a><span>›</span>
+    💼 働く
+  </div>
+</nav>
+
+<div class="cat-hero">
+  <div class="cat-hero-emoji">💼</div>
+  <h1>働く</h1>
+  <p>定年後の働き方・収入設計・社会保険・週2日モデルの実験——「働く」を問い直す人のための問答集。</p>
+</div>
+
+<main class="main">
+  <ul class="qa-list">
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-001/"><span class="qa-item-num">hataraku-001</span><span class="qa-item-q">定年後、何をすればいいかわからなくなりました。まず何から始めればよいですか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-002/"><span class="qa-item-num">hataraku-002</span><span class="qa-item-q">再雇用と独立、どちらを選ぶべきか迷っています。判断の基準はありますか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-003/"><span class="qa-item-num">hataraku-003</span><span class="qa-item-q">60歳以降も働くと、年金はどうなりますか？損をすることがありますか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-004/"><span class="qa-item-num">hataraku-004</span><span class="qa-item-q">定年後に社会保険はどうなりますか？自分で払わなければいけませんか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-005/"><span class="qa-item-num">hataraku-005</span><span class="qa-item-q">介護で離職しました。もう一度働き始めるとしたら、何から考えればよいですか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-006/"><span class="qa-item-num">hataraku-006</span><span class="qa-item-q">病気療養後、また働きたいと思っています。どのタイミングで動き始めればよいですか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-007/"><span class="qa-item-num">hataraku-007</span><span class="qa-item-q">週2〜3日だけ働く、ということは現実的に可能ですか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-008/"><span class="qa-item-num">hataraku-008</span><span class="qa-item-q">KindleやSubstackで収益を得ることは、本当にできますか？始め方を教えてください。</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-009/"><span class="qa-item-num">hataraku-009</span><span class="qa-item-q">定年後、人との繋がりが急に減りました。孤立しないためにできることはありますか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-010/"><span class="qa-item-num">hataraku-010</span><span class="qa-item-q">60代でAIを使った働き方に挑戦できますか？何から始めればよいですか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-011/"><span class="qa-item-num">hataraku-011</span><span class="qa-item-q">定年後、「自分には何もない」と感じています。専門性がなくても発信できますか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-012/"><span class="qa-item-num">hataraku-012</span><span class="qa-item-q">定年前の自分と、定年後の自分。何が一番変わりましたか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-013/"><span class="qa-item-num">hataraku-013</span><span class="qa-item-q">定年後の収入として、月いくらあれば生活できますか？目安を教えてください。</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-014/"><span class="qa-item-num">hataraku-014</span><span class="qa-item-q">「誇りを持って働く」とはどういう状態ですか？収入が少なくても誇りは持てますか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-015/"><span class="qa-item-num">hataraku-015</span><span class="qa-item-q">障害年金を受給しながら、少し働くことはできますか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-016/"><span class="qa-item-num">hataraku-016</span><span class="qa-item-q">ブログやSNSで発信を続けるコツはありますか？すぐやめてしまいます。</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-017/"><span class="qa-item-num">hataraku-017</span><span class="qa-item-q">定年後、地域や社会と繋がる方法として何がありますか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-018/"><span class="qa-item-num">hataraku-018</span><span class="qa-item-q">子や孫に、お金以外で何を残せるでしょうか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-019/"><span class="qa-item-num">hataraku-019</span><span class="qa-item-q">60代から新しいことを始めるのは遅すぎますか？</span><span class="qa-item-arrow">›</span></a></li>
+    <li class="qa-item"><a href="/qa/hataraku/hataraku-020/"><span class="qa-item-num">hataraku-020</span><span class="qa-item-q">「学ぶこと」と「働くこと」は、定年後どう変わりましたか？</span><span class="qa-item-arrow">›</span></a></li>
+  </ul>
+  <div class="back-link-wrap">
+    <a href="/qa/" class="back-link">← Q&amp;A トップに戻る</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">協進化ジャーナル</p>
+    <p class="footer-tagline">生きることは、育てること。</p>
+    <div class="footer-links">
+      <a href="/journal/">ジャーナル</a>
+      <a href="/books/">書籍</a>
+      <a href="/qa/">Q&amp;A</a>
+      <a href="/about/">研究所</a>
+      <a href="https://kyoshinkajournal.substack.com" target="_blank">Substack</a>
+      <a href="/contact/">お問い合わせ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 キャリア＆ライフデザイン研究所</p>
+  </div>
+</footer>
+
+</body>
+</html>

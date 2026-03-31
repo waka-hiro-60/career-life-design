@@ -45,6 +45,7 @@
 <style>
 :root {
   --green:   #1a4a3a;
+  --green-dark: #0f2f24;
   --green-l: #2d6b55;
   --gold:    #c9a84c;
   --cream:   #f8f6f2;
@@ -66,45 +67,48 @@ body {
 
 /* ── ヘッダー ── */
 .site-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(26,74,58,0.97);
+  backdrop-filter: blur(8px);
+  z-index: 100; height: 60px;
 }
 .header-inner {
-  max-width: 1000px; margin: 0 auto;
-  padding: 0 24px;
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 2rem; height: 100%;
   display: flex; align-items: center; justify-content: space-between;
-  height: 58px;
 }
 .site-logo {
   font-family: 'Noto Serif JP', serif;
-  font-size: 14px; font-weight: 700;
-  color: var(--text); text-decoration: none; line-height: 1.3;
+  font-weight: 700; font-size: 1rem;
+  color: var(--gold); text-decoration: none;
+  letter-spacing: 0.05em; line-height: 1.3;
 }
 .site-logo span {
-  display: block; font-size: 10px;
-  font-weight: 400; color: var(--muted); letter-spacing: .06em;
+  display: block; font-size: 0.65rem;
+  font-weight: 400; color: rgba(255,255,255,0.6);
+  letter-spacing: 0.08em; font-family: 'Noto Sans JP', sans-serif;
 }
-.header-nav { display: flex; align-items: center; gap: 20px; }
-.header-nav a { font-size: 13px; color: var(--text); text-decoration: none; transition: color .2s; }
-.header-nav a:hover { color: var(--green); }
-.header-nav .nav-qa { color: var(--green); font-weight: 700; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
-@media (max-width: 680px) {
-  .header-nav a:not(.nav-qa) { display: none; }
+.header-nav { display: flex; gap: 2rem; }
+.header-nav a {
+  color: rgba(255,255,255,0.8); text-decoration: none;
+  font-size: 0.85rem; letter-spacing: 0.05em; transition: color 0.2s;
 }
+.header-nav a:hover { color: var(--gold); }
+.header-nav .nav-qa { color: var(--gold); font-weight: 700; }
+@media (max-width: 640px) { .header-nav { display: none; } }
 
 /* ── パンくず ── */
 .breadcrumb {
-  background: var(--white); border-bottom: 1px solid var(--border);
+  background: var(--cream); border-bottom: 1px solid var(--border);
   padding: 9px 24px; font-size: 11px; color: var(--muted);
 }
-.breadcrumb-inner { max-width: 1000px; margin: 0 auto; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.breadcrumb-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 .breadcrumb a { color: var(--green); text-decoration: none; }
 
 /* ── レイアウト ── */
 .layout {
-  max-width: 1000px; margin: 0 auto;
-  padding: 36px 24px 64px;
+  max-width: 1100px; margin: 0 auto;
+  padding: 36px 2rem 64px;
   display: grid;
   grid-template-columns: 1fr 260px;
   gap: 32px;
@@ -289,33 +293,34 @@ body {
 .back-link:hover { font-weight: 700; }
 
 /* ── フッター ── */
-.site-footer {
-  background: var(--green); color: rgba(255,255,255,.7);
-  padding: 40px 24px 28px; font-size: 12px; line-height: 1.8;
+.site-footer { background: var(--green-dark); }
+.footer-inner {
+  padding: 3rem 2rem 2rem; text-align: center;
 }
-.footer-inner { max-width: 1000px; margin: 0 auto; }
 .footer-logo {
   font-family: 'Noto Serif JP', serif;
-  font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 4px;
+  font-size: 1.2rem; font-weight: 700;
+  color: var(--gold); margin-bottom: 0.25rem;
 }
-.footer-tagline { font-size: 11px; color: rgba(255,255,255,.4); margin-bottom: 24px; }
-.footer-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px;
+.footer-tagline {
+  font-size: 0.8rem; color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em; margin-bottom: 2rem;
 }
-@media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-.footer-col h4 {
-  font-size: 10px; font-weight: 700;
-  color: rgba(255,255,255,.5); letter-spacing: .1em;
-  text-transform: uppercase; margin-bottom: 8px;
+.footer-links {
+  display: flex; justify-content: center;
+  flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem;
 }
-.footer-col a {
-  display: block; font-size: 12px;
-  color: rgba(255,255,255,.5); text-decoration: none; margin-bottom: 5px;
+.footer-links a {
+  color: rgba(255,255,255,0.6); text-decoration: none;
+  font-size: 0.82rem; letter-spacing: 0.05em; transition: color 0.2s;
 }
-.footer-col a:hover { color: var(--white); }
+.footer-links a:hover { color: var(--gold); }
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.1);
-  padding-top: 18px; font-size: 11px; color: rgba(255,255,255,.3);
+  padding: 1rem 2rem; text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-copy {
+  font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em;
 }
 </style>
 </head>
@@ -329,16 +334,17 @@ body {
       <span>Career &amp; Life Design Lab</span>
     </a>
     <nav class="header-nav">
-      <a href="https://career-life.design/journal/">ジャーナル</a>
-      <a href="https://career-life.design/books/">書籍</a>
+      <a href="/journal/">ジャーナル</a>
+      <a href="/books/">書籍</a>
       <a href="/qa/" class="nav-qa">Q&amp;A</a>
-      <a href="https://career-life.design/about/">研究所</a>
+      <a href="/about/">研究所</a>
+      <a href="/contact/">お問い合わせ</a>
     </nav>
   </div>
 </header>
 
-<!-- パンくず -->
-<nav class="breadcrumb">
+<!-- パンくず（fixed headerの高さ分margin） -->
+<nav class="breadcrumb" style="margin-top:60px;">
   <div class="breadcrumb-inner">
     <a href="https://career-life.design/">ホーム</a>
     <span>›</span>
@@ -418,28 +424,19 @@ body {
 <!-- フッター -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-logo">協進化ジャーナル</div>
-    <div class="footer-tagline">Career &amp; Life Design Lab / キャリア＆ライフデザイン研究所</div>
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>コンテンツ</h4>
-        <a href="https://career-life.design/journal/">ジャーナル</a>
-        <a href="https://career-life.design/books/">書籍</a>
-        <a href="/qa/">Q&amp;A</a>
-      </div>
-      <div class="footer-col">
-        <h4>研究所</h4>
-        <a href="https://career-life.design/about/">時代進について</a>
-        <a href="https://career-life.design/research/">研究テーマ</a>
-      </div>
-      <div class="footer-col">
-        <h4>ご利用</h4>
-        <a href="https://career-life.design/contact/">お問い合わせ</a>
-      </div>
+    <p class="footer-logo">協進化ジャーナル</p>
+    <p class="footer-tagline">生きることは、育てること。</p>
+    <div class="footer-links">
+      <a href="/journal/">ジャーナル</a>
+      <a href="/books/">書籍</a>
+      <a href="/qa/">Q&amp;A</a>
+      <a href="/about/">研究所</a>
+      <a href="https://kyoshinkajournal.substack.com" target="_blank">Substack</a>
+      <a href="/contact/">お問い合わせ</a>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 キャリア＆ライフデザイン研究所</p>
-    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 キャリア＆ライフデザイン研究所</p>
   </div>
 </footer>
 
