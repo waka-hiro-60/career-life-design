@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q&A | 時代進 キャリア＆ライフデザイン研究所</title>
+<meta name="description" content="60代からのキャリア・人生設計・社会保障・住まい・学び——時代進が当事者として問い、答えるQ&Aサイト。医・食・住・遊・学・働の6領域。">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "時代進 Q&A",
+  "description": "60代からのキャリア・人生設計・社会保障・住まい・学び——時代進が当事者として問い、答えるQ&Aサイト",
+  "url": "https://career-life.design/qa/",
+  "author": {
+    "@type": "Person",
+    "name": "時代進",
+    "url": "https://career-life.design/about/"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green:   #1a4a3a;
+  --green-l: #2d6b55;
+  --gold:    #c9a84c;
+  --cream:   #f8f6f2;
+  --cream-d: #f0ece4;
+  --text:    #2a2a2a;
+  --muted:   #6b6460;
+  --border:  #e0dbd2;
+  --white:   #ffffff;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* ── ヘッダー ── */
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+.header-inner {
+  max-width: 1000px; margin: 0 auto;
+  padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 58px;
+}
+.site-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px; font-weight: 700;
+  color: var(--text); text-decoration: none; line-height: 1.3;
+}
+.site-logo span {
+  display: block; font-size: 10px;
+  font-weight: 400; color: var(--muted); letter-spacing: .06em;
+}
+.header-nav { display: flex; align-items: center; gap: 20px; }
+.header-nav a { font-size: 13px; color: var(--text); text-decoration: none; transition: color .2s; }
+.header-nav a:hover { color: var(--green); }
+.header-nav .nav-qa { color: var(--green); font-weight: 700; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+@media (max-width: 680px) {
+  .header-nav a:not(.nav-qa) { display: none; }
+}
+
+/* ── パンくず ── */
+.breadcrumb {
+  background: var(--white); border-bottom: 1px solid var(--border);
+  padding: 9px 24px; font-size: 11px; color: var(--muted);
+}
+.breadcrumb-inner { max-width: 1000px; margin: 0 auto; display: flex; gap: 6px; align-items: center; }
+.breadcrumb a { color: var(--green); text-decoration: none; }
+
+/* ── ヒーロー ── */
+.qa-hero {
+  background: var(--green);
+  padding: 48px 24px 40px;
+  text-align: center;
+}
+.qa-hero-label {
+  font-size: 10px; font-weight: 700; letter-spacing: .2em;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 12px;
+}
+.qa-hero h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 26px; font-weight: 700; color: var(--white);
+  line-height: 1.5; margin-bottom: 14px;
+}
+.qa-hero p {
+  font-size: 13px; color: rgba(255,255,255,.65);
+  max-width: 560px; margin: 0 auto; line-height: 1.9;
+}
+
+/* ── カテゴリータブ ── */
+.cat-tabs {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 58px; z-index: 90;
+  overflow-x: auto;
+}
+.cat-tabs-inner {
+  max-width: 1000px; margin: 0 auto;
+  padding: 0 24px;
+  display: flex; gap: 0;
+}
+.cat-tab {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 12px 20px;
+  font-size: 12px; color: var(--muted);
+  text-decoration: none; white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all .2s;
+  gap: 3px;
+}
+.cat-tab:hover { color: var(--green); background: var(--cream); }
+.cat-tab.active {
+  color: var(--green); font-weight: 700;
+  border-bottom-color: var(--gold);
+}
+.cat-tab .tab-emoji { font-size: 16px; }
+.cat-tab .tab-count {
+  font-size: 10px; color: var(--muted);
+}
+.cat-tab.active .tab-count { color: var(--green); }
+
+/* ── レイアウト ── */
+.layout {
+  max-width: 1000px; margin: 0 auto;
+  padding: 36px 24px 64px;
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 32px;
+}
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { order: 2; }
+}
+
+/* ── セクションヘッダー ── */
+.section-head {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 16px;
+}
+.section-head h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px; font-weight: 700; color: var(--green);
+}
+.section-head .section-count {
+  font-size: 11px; color: var(--muted);
+  background: var(--cream-d); border: 1px solid var(--border);
+  padding: 2px 8px; border-radius: 20px;
+}
+.section-desc {
+  font-size: 13px; color: var(--muted);
+  margin-bottom: 20px; line-height: 1.8;
+}
+
+/* ── QAリスト ── */
+.qa-list { list-style: none; margin-bottom: 40px; }
+.qa-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  transition: all .2s;
+}
+.qa-item:hover {
+  border-color: var(--green);
+  box-shadow: 0 2px 8px rgba(26,74,58,.08);
+}
+.qa-item a {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 18px;
+  text-decoration: none; color: var(--text);
+}
+.qa-item-num {
+  flex-shrink: 0;
+  font-size: 10px; font-weight: 700; font-family: monospace;
+  color: var(--muted); margin-top: 3px; width: 72px;
+}
+.qa-item-body { flex: 1; }
+.qa-item-q {
+  font-size: 14px; font-weight: 500; line-height: 1.6;
+  color: var(--text); margin-bottom: 6px;
+}
+.qa-item:hover .qa-item-q { color: var(--green); }
+.qa-item-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+.qa-tag {
+  font-size: 10px; font-weight: 700;
+  padding: 2px 7px; border-radius: 3px;
+}
+.qa-tag-primary { background: var(--green); color: var(--white); }
+.qa-tag-secondary {
+  background: var(--cream-d); color: var(--green);
+  border: 1px solid var(--border);
+}
+.qa-item-arrow {
+  flex-shrink: 0; font-size: 14px;
+  color: var(--border); margin-top: 2px;
+  transition: color .2s;
+}
+.qa-item:hover .qa-item-arrow { color: var(--green); }
+
+/* 準備中カテゴリー */
+.coming-section {
+  margin-bottom: 32px;
+}
+.coming-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+}
+@media (max-width: 480px) { .coming-grid { grid-template-columns: 1fr; } }
+.coming-card {
+  background: var(--white);
+  border: 1px dashed var(--border);
+  border-radius: 6px; padding: 16px 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.coming-emoji { font-size: 20px; }
+.coming-name { font-size: 13px; font-weight: 700; color: var(--muted); }
+.coming-badge {
+  font-size: 10px; color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 2px 7px; border-radius: 3px; margin-left: auto;
+}
+
+/* ── サイドバー ── */
+.sidebar { display: flex; flex-direction: column; gap: 20px; }
+.side-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px; padding: 20px;
+}
+.side-card h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 13px; font-weight: 700; color: var(--green);
+  margin-bottom: 14px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* 時代進プロフィール */
+.profile-card { text-align: center; }
+.profile-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--green);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 22px; font-weight: 700; color: var(--white);
+  margin: 0 auto 12px;
+}
+.profile-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px; font-weight: 700; margin-bottom: 4px;
+}
+.profile-role { font-size: 11px; color: var(--muted); margin-bottom: 12px; }
+.profile-desc { font-size: 12px; color: var(--muted); line-height: 1.8; text-align: left; }
+.profile-links { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; }
+.profile-link {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 8px; border-radius: 5px;
+  font-size: 12px; font-weight: 700; text-decoration: none;
+  transition: opacity .2s;
+}
+.profile-link:hover { opacity: .8; }
+.profile-link-sub { background: var(--green); color: var(--white); }
+.profile-link-book { background: var(--cream-d); color: var(--green); border: 1px solid var(--border); }
+
+
+
+/* ── フッター ── */
+.site-footer {
+  background: var(--green); color: rgba(255,255,255,.7);
+  padding: 40px 24px 28px; font-size: 12px; line-height: 1.8;
+}
+.footer-inner { max-width: 1000px; margin: 0 auto; }
+.footer-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 4px;
+}
+.footer-tagline { font-size: 11px; color: rgba(255,255,255,.4); margin-bottom: 24px; }
+.footer-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px;
+}
+@media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+.footer-col h4 {
+  font-size: 10px; font-weight: 700;
+  color: rgba(255,255,255,.5); letter-spacing: .1em;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+.footer-col a {
+  display: block; font-size: 12px;
+  color: rgba(255,255,255,.5); text-decoration: none; margin-bottom: 5px;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 18px; font-size: 11px; color: rgba(255,255,255,.3);
+}
+.footer-bottom a { color: rgba(255,255,255,.4); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="https://career-life.design/">
+      協進化ジャーナル
+      <span>Career &amp; Life Design Lab</span>
+    </a>
+    <nav class="header-nav">
+      <a href="https://career-life.design/journal/">ジャーナル</a>
+      <a href="https://career-life.design/books/">書籍</a>
+      <a href="/qa/" class="nav-qa">Q&amp;A</a>
+      <a href="https://career-life.design/about/">研究所</a>
+    </nav>
+  </div>
+</header>
+
+<!-- パンくず -->
+<nav class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="https://career-life.design/">ホーム</a>
+    <span>›</span>
+    Q&amp;A
+  </div>
+</nav>
+
+<!-- ヒーロー -->
+<div class="qa-hero">
+  <div class="qa-hero-label">Q &amp; A</div>
+  <h1>問いから始める、<br>人生後半の地図</h1>
+  <p>60代からのキャリア・社会保障・住まい・学び——時代進が当事者として問い、研究者として答えます。</p>
+</div>
+
+<!-- カテゴリータブ -->
+<div class="cat-tabs">
+  <div class="cat-tabs-inner">
+    <a href="/qa/ikai/" class="cat-tab">
+      <span class="tab-emoji">🏥</span>
+      <span>医・介護</span>
+      <span class="tab-count">準備中</span>
+    </a>
+    <a href="/qa/shoku/" class="cat-tab">
+      <span class="tab-emoji">🍽</span>
+      <span>食</span>
+      <span class="tab-count">準備中</span>
+    </a>
+    <a href="/qa/ju/" class="cat-tab">
+      <span class="tab-emoji">🏠</span>
+      <span>住まい</span>
+      <span class="tab-count">準備中</span>
+    </a>
+    <a href="/qa/asobi/" class="cat-tab">
+      <span class="tab-emoji">🌱</span>
+      <span>遊ぶ</span>
+      <span class="tab-count">準備中</span>
+    </a>
+    <a href="/qa/manabu/" class="cat-tab">
+      <span class="tab-emoji">📖</span>
+      <span>学ぶ</span>
+      <span class="tab-count">準備中</span>
+    </a>
+    <a href="/qa/hataraku/" class="cat-tab active">
+      <span class="tab-emoji">💼</span>
+      <span>働く</span>
+      <span class="tab-count">20問</span>
+    </a>
+  </div>
+</div>
+
+<!-- メインレイアウト -->
+<div class="layout">
+  <main>
+
+    <!-- hataraku セクション -->
+    <div class="section-head">
+      <h2>💼 働く</h2>
+      <span class="section-count">20問</span>
+    </div>
+    <p class="section-desc">
+      定年後の働き方・収入設計・社会保険・週2日モデルの実験——「働く」を問い直す人のための問答集。
+    </p>
+
+    <ul class="qa-list">
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-001/">
+          <span class="qa-item-num">hataraku-001</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">定年後、何をすればいいかわからなくなりました。まず何から始めればよいですか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-002/">
+          <span class="qa-item-num">hataraku-002</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">再雇用と独立、どちらを選ぶべきか迷っています。判断の基準はありますか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-003/">
+          <span class="qa-item-num">hataraku-003</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">60歳以降も働くと、年金はどうなりますか？損をすることがありますか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-004/">
+          <span class="qa-item-num">hataraku-004</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">定年後に社会保険はどうなりますか？自分で払わなければいけませんか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-005/">
+          <span class="qa-item-num">hataraku-005</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">介護で離職しました。もう一度働き始めるとしたら、何から考えればよいですか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+              <span class="qa-tag qa-tag-secondary">#ikai</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-006/">
+          <span class="qa-item-num">hataraku-006</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">病気療養後、また働きたいと思っています。どのタイミングで動き始めればよいですか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+              <span class="qa-tag qa-tag-secondary">#ikai</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-007/">
+          <span class="qa-item-num">hataraku-007</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">週2〜3日だけ働く、ということは現実的に可能ですか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-008/">
+          <span class="qa-item-num">hataraku-008</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">KindleやSubstackで収益を得ることは、本当にできますか？始め方を教えてください。</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+              <span class="qa-tag qa-tag-secondary">#manabu</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-009/">
+          <span class="qa-item-num">hataraku-009</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">定年後、人との繋がりが急に減りました。孤立しないためにできることはありますか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+              <span class="qa-tag qa-tag-secondary">#asobi</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-010/">
+          <span class="qa-item-num">hataraku-010</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">60代でAIを使った働き方に挑戦できますか？何から始めればよいですか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+              <span class="qa-tag qa-tag-secondary">#manabu</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-011/">
+          <span class="qa-item-num">hataraku-011</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">定年後、「自分には何もない」と感じています。専門性がなくても発信できますか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+              <span class="qa-tag qa-tag-secondary">#manabu</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-012/">
+          <span class="qa-item-num">hataraku-012</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">定年前の自分と、定年後の自分。何が一番変わりましたか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-013/">
+          <span class="qa-item-num">hataraku-013</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">定年後の収入として、月いくらあれば生活できますか？目安を教えてください。</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-014/">
+          <span class="qa-item-num">hataraku-014</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">「誇りを持って働く」とはどういう状態ですか？収入が少なくても誇りは持てますか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-015/">
+          <span class="qa-item-num">hataraku-015</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">障害年金を受給しながら、少し働くことはできますか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+              <span class="qa-tag qa-tag-secondary">#ikai</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-016/">
+          <span class="qa-item-num">hataraku-016</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">ブログやSNSで発信を続けるコツはありますか？すぐやめてしまいます。</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+              <span class="qa-tag qa-tag-secondary">#manabu</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-017/">
+          <span class="qa-item-num">hataraku-017</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">定年後、地域や社会と繋がる方法として何がありますか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+              <span class="qa-tag qa-tag-secondary">#asobi</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-018/">
+          <span class="qa-item-num">hataraku-018</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">子や孫に、お金以外で何を残せるでしょうか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-019/">
+          <span class="qa-item-num">hataraku-019</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">60代から新しいことを始めるのは遅すぎますか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+      <li class="qa-item">
+        <a href="/qa/hataraku/hataraku-020/">
+          <span class="qa-item-num">hataraku-020</span>
+          <div class="qa-item-body">
+            <div class="qa-item-q">「学ぶこと」と「働くこと」は、定年後どう変わりましたか？</div>
+            <div class="qa-item-tags">
+              <span class="qa-tag qa-tag-primary">#hataraku</span>
+              <span class="qa-tag qa-tag-secondary">#manabu</span>
+            </div>
+          </div>
+          <span class="qa-item-arrow">›</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- 準備中カテゴリー -->
+    <div class="coming-section">
+      <div class="section-head">
+        <h2>その他のカテゴリー</h2>
+      </div>
+      <div class="coming-grid">
+        <div class="coming-card">
+          <span class="coming-emoji">🏥</span>
+          <span class="coming-name">医・介護</span>
+          <span class="coming-badge">準備中</span>
+        </div>
+        <div class="coming-card">
+          <span class="coming-emoji">🍽</span>
+          <span class="coming-name">食</span>
+          <span class="coming-badge">準備中</span>
+        </div>
+        <div class="coming-card">
+          <span class="coming-emoji">🏠</span>
+          <span class="coming-name">住まい</span>
+          <span class="coming-badge">準備中</span>
+        </div>
+        <div class="coming-card">
+          <span class="coming-emoji">🌱</span>
+          <span class="coming-name">遊ぶ</span>
+          <span class="coming-badge">準備中</span>
+        </div>
+        <div class="coming-card">
+          <span class="coming-emoji">📖</span>
+          <span class="coming-name">学ぶ</span>
+          <span class="coming-badge">準備中</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- サイドバー -->
+  <aside class="sidebar">
+
+    <!-- 時代進プロフィール -->
+    <div class="side-card profile-card">
+      <div class="profile-avatar">時</div>
+      <div class="profile-name">時代進</div>
+      <div class="profile-role">キャリア＆ライフデザイン研究所</div>
+      <p class="profile-desc">
+        37年の企業経験・社労士・宅建士・CISAを持つ研究者。60歳からの「学び＝働き」モデルを自ら実験しながら発信しています。
+      </p>
+      <div class="profile-links">
+        <a href="https://kyoshinkajournal.substack.com" class="profile-link profile-link-sub">
+          📝 Substack を読む
+        </a>
+        <a href="https://career-life.design/books/" class="profile-link profile-link-book">
+          📚 書籍一覧を見る
+        </a>
+      </div>
+    </div>
+</aside>
+</div>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">協進化ジャーナル</div>
+    <div class="footer-tagline">Career &amp; Life Design Lab / キャリア＆ライフデザイン研究所</div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>コンテンツ</h4>
+        <a href="https://career-life.design/journal/">ジャーナル</a>
+        <a href="https://career-life.design/books/">書籍</a>
+        <a href="/qa/">Q&amp;A</a>
+      </div>
+      <div class="footer-col">
+        <h4>研究所</h4>
+        <a href="https://career-life.design/about/">時代進について</a>
+        <a href="https://career-life.design/research/">研究テーマ</a>
+      </div>
+      <div class="footer-col">
+        <h4>ご利用</h4>
+        <a href="https://career-life.design/contact/">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 キャリア＆ライフデザイン研究所</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
