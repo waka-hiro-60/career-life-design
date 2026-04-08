@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ダウンロード商品 | キャリア＆ライフデザイン研究所</title>
+  <meta name="description" content="キャリア＆ライフデザイン研究所のダウンロード商品一覧。年金・キャリア・ライフデザインに役立つExcel・PDFツールを販売しています。">
+  <link rel="stylesheet" href="/assets/css/common.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ページ固有スタイル */
+    .shop-hero {
+      background: linear-gradient(135deg, #f8f5f0 0%, #ede8df 100%);
+      padding: 60px 20px 48px;
+      text-align: center;
+      border-bottom: 1px solid #d8cfc4;
+    }
+
+    .shop-hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: #2c2416;
+      margin: 0 0 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .shop-hero p {
+      color: #6b5f4e;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .shop-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .section-label {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: #8c7b65;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e0d8cc;
+    }
+
+    /* 商品カード */
+    .product-card {
+      background: #fff;
+      border: 1px solid #e0d8cc;
+      border-radius: 4px;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: start;
+      transition: box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+
+    .product-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    .badge-excel {
+      background: #e8f0e8;
+      color: #3a6e3a;
+      border: 1px solid #c4dac4;
+    }
+
+    .badge-pdf {
+      background: #f0e8e8;
+      color: #6e3a3a;
+      border: 1px solid #dac4c4;
+    }
+
+    .badge-soon {
+      background: #f0f0ec;
+      color: #888;
+      border: 1px solid #ddd;
+    }
+
+    .product-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      color: #2c2416;
+      margin: 0 0 10px;
+      line-height: 1.5;
+    }
+
+    .product-subtitle {
+      font-size: 0.8rem;
+      color: #8c7b65;
+      margin: 0 0 16px;
+      letter-spacing: 0.05em;
+    }
+
+    .product-desc {
+      font-size: 0.88rem;
+      color: #5a4f42;
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+
+    .product-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .product-features li {
+      font-size: 0.83rem;
+      color: #6b5f4e;
+      padding: 4px 0 4px 18px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .product-features li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #a08c70;
+      font-size: 0.75rem;
+      top: 5px;
+    }
+
+    /* 右カラム（価格・ボタン） */
+    .product-action {
+      text-align: center;
+      min-width: 140px;
+      padding-top: 4px;
+    }
+
+    .product-price {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.6rem;
+      color: #2c2416;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .product-price-note {
+      font-size: 0.72rem;
+      color: #8c7b65;
+      margin-bottom: 20px;
+    }
+
+    .btn-buy {
+      display: block;
+      width: 100%;
+      padding: 12px 20px;
+      background: #3d5a3e;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      border-radius: 3px;
+      text-align: center;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-buy:hover {
+      background: #2d4430;
+    }
+
+    .btn-soon {
+      display: block;
+      width: 100%;
+      padding: 12px 20px;
+      background: #f0f0ec;
+      color: #aaa;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      border-radius: 3px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    .product-format {
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-top: 10px;
+    }
+
+    /* 注意書き */
+    .shop-note {
+      background: #f8f5f0;
+      border: 1px solid #e0d8cc;
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-top: 40px;
+    }
+
+    .shop-note h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.85rem;
+      color: #5a4f42;
+      margin: 0 0 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .shop-note ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .shop-note li {
+      font-size: 0.8rem;
+      color: #6b5f4e;
+      padding: 3px 0 3px 16px;
+      position: relative;
+    }
+
+    .shop-note li::before {
+      content: '・';
+      position: absolute;
+      left: 0;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 600px) {
+      .product-card {
+        grid-template-columns: 1fr;
+        padding: 28px 24px;
+      }
+
+      .product-action {
+        border-top: 1px solid #e0d8cc;
+        padding-top: 24px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .product-price {
+        margin-bottom: 0;
+      }
+
+      .product-price-note {
+        margin-bottom: 0;
+      }
+
+      .btn-buy, .btn-soon {
+        white-space: nowrap;
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="common-header"></div>
+
+  <div class="shop-hero">
+    <h1>ダウンロード商品</h1>
+    <p>年金・キャリア・ライフデザインに役立つツールをExcel・PDF形式でご提供しています</p>
+  </div>
+
+  <div class="shop-container">
+
+    <div class="section-label">販売中</div>
+
+    <!-- 商品1：年金早見表 -->
+    <div class="product-card">
+      <div class="product-info">
+        <span class="product-badge badge-excel">Excel</span>
+        <h2 class="product-title">年金繰上げ・繰下げ受給 早見表</h2>
+        <p class="product-subtitle">歳月別・月額／年額／損益分岐点 一覧表</p>
+        <p class="product-desc">
+          「何歳何か月から受け取れば、いつ元が取れるか」——
+          60歳0か月から75歳0か月まで1か月刻み・181通りの答えを、1枚の表にまとめました。
+          65歳時の年金額を1か所入力するだけで全自動計算されます。
+        </p>
+        <ul class="product-features">
+          <li>月額・年額・損益分岐点の3表を収録</li>
+          <li>損益分岐点は「○歳○か月」で表示</li>
+          <li>2022年4月改正後の最新ルール対応</li>
+          <li>法令に準拠した端数処理（月額：年額÷12の円未満切り捨て）</li>
+          <li>「ねんきん定期便」の数字を入力するだけで使える</li>
+        </ul>
+        <details style="margin-bottom:20px;">
+          <summary style="font-size:0.82rem;color:#8c7b65;cursor:pointer;padding:8px 0;letter-spacing:0.03em;">「自分で作れそう」と思った方へ</summary>
+          <p style="font-size:0.82rem;color:#6b5f4e;line-height:1.8;margin:12px 0 0;padding:16px;background:#f8f5f0;border-radius:3px;">
+            実際に作ってみると、いくつかの壁があります。月額の端数処理は法令上「年額÷12の円未満切り捨て」が正しく、単純な四捨五入とは異なります。損益分岐点は「受給開始時点が異なる2つの累計額が逆転する年齢」を解く方程式が必要で、Excelの<code>ROUND</code>と<code>INT</code>と<code>MOD</code>を組み合わせて「○歳○か月」形式で正しく表示するには、月の繰り上がり処理も必要です。この表はそのすべてを解決済みです。500円で、その手間を買ってください。
+          </p>
+        </details>
+      </div>
+      <div class="product-action">
+        <div class="product-price">¥500</div>
+        <div class="product-price-note">税込・買い切り</div>
+        <a href="https://buy.stripe.com/4gM3cx2qy3Py8yvd7L5J600" class="btn-buy" target="_blank" rel="noopener">
+          購入してダウンロード
+        </a>
+        <div class="product-format">Excel形式（.xlsx）</div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top: 48px;">準備中</div>
+
+    <!-- 商品2：収支シミュレーター（準備中） -->
+    <div class="product-card" style="opacity: 0.7;">
+      <div class="product-info">
+        <span class="product-badge badge-soon">準備中</span>
+        <h2 class="product-title">定年後収支シミュレーター</h2>
+        <p class="product-subtitle">年金・副収入・支出の統合計算シート</p>
+        <p class="product-desc">
+          年金収入・副業収入・生活支出・医療費をまとめて入力し、
+          何歳まで資金が持つかを試算するExcelシートです。
+        </p>
+      </div>
+      <div class="product-action">
+        <div class="product-price" style="color:#aaa;">¥1,980</div>
+        <div class="product-price-note">（予定）</div>
+        <span class="btn-soon">準備中</span>
+        <div class="product-format">Excel形式（.xlsx）</div>
+      </div>
+    </div>
+
+    <!-- 注意書き -->
+    <div class="shop-note">
+      <h3>ご購入前にご確認ください</h3>
+      <ul>
+        <li>決済完了後、ご購入のメールアドレスにダウンロードURLをお送りします</li>
+        <li>URLの有効期限は24時間・ダウンロードは3回までです</li>
+        <li>本商品はデジタルコンテンツのため、購入後の返金はお受けできません</li>
+        <li>本資料はあくまでも試算を目的としたものです。実際の年金受給額は年金事務所またはねんきんネットにてご確認ください</li>
+        <li>ご不明な点は <a href="/contact/" style="color:#3d5a3e;">お問い合わせ</a> からご連絡ください</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div id="common-footer"></div>
+
+  <script src="/assets/js/common.js"></script>
+</body>
+</html>
