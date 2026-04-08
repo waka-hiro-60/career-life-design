@@ -17,6 +17,7 @@
       <a href="/journal/">ジャーナル</a>
       <a href="/books/">書籍</a>
       <a href="/qa/">Q&amp;A</a>
+      <a href="/shop/">ショップ</a>
       <a href="/about/">研究所</a>
       <a href="/contact/">お問い合わせ</a>
     </nav>
@@ -33,6 +34,7 @@
       <a href="/journal/">ジャーナル</a>
       <a href="/books/">書籍</a>
       <a href="/qa/">Q&amp;A</a>
+      <a href="/shop/">ショップ</a>
       <a href="/about/">研究所</a>
       <a href="https://kyoshinkajournal.substack.com" target="_blank">Substack</a>
       <a href="/contact/">お問い合わせ</a>
