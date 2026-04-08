@@ -169,6 +169,26 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- ===== 今日追加したページ ===== -->
+  <url>
+    <loc>https://career-life.design/shop/</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://career-life.design/legal/</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://career-life.design/privacy/</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
   <!-- ===== Q&A カテゴリ：準備中（5カテゴリ） ===== -->
   <url>
     <loc>https://career-life.design/qa/ikai/</loc>
