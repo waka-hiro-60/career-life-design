@@ -346,39 +346,7 @@
     <p class="section-label">Backnumber</p>
     <h2 class="section-title">バックナンバー</h2>
     <div class="divider"></div>
-    <div class="journal-grid">
-
-      <a href="https://kyoshinkajournal.substack.com" class="journal-card" target="_blank">
-        <div class="journal-card-thumb">
-          <div class="journal-no"><span>No.</span>13</div>
-        </div>
-        <div class="journal-card-body">
-          <p class="journal-card-date">2026年3月</p>
-          <p class="journal-card-title">地図が見えてきた</p>
-        </div>
-      </a>
-
-      <a href="https://kyoshinkajournal.substack.com/p/121" class="journal-card" target="_blank">
-        <div class="journal-card-thumb">
-          <div class="journal-no"><span>No.</span>12</div>
-        </div>
-        <div class="journal-card-body">
-          <p class="journal-card-date">2026年1月</p>
-          <p class="journal-card-title">半年間の協進化を振り返る</p>
-        </div>
-      </a>
-
-      <a href="https://kyoshinkajournal.substack.com" class="journal-card" target="_blank">
-        <div class="journal-card-thumb">
-          <div class="journal-no"><span>No.</span>1–11</div>
-        </div>
-        <div class="journal-card-body">
-          <p class="journal-card-date">2025年6月〜12月</p>
-          <p class="journal-card-title">創刊〜11号（バックナンバー）</p>
-        </div>
-      </a>
-
-    </div>
+    <div class="journal-grid" id="journal-grid"></div>
     <div class="text-center">
       <a href="https://kyoshinkajournal.substack.com" class="btn btn-gold" target="_blank">
         Substackで全記事を読む
@@ -391,5 +359,34 @@
 <div id="site-footer"></div>
 
 <script src="/assets/js/common.js"></script>
-</body>
+<script>
+  // ============================================================
+  // バックナンバーデータ
+  // 新しい号を追加するときはここに1行追加するだけ
+  // ============================================================
+  var issues = [
+    { no: '14', date: '2026年4月', title: '',        url: 'https://kyoshinkajournal.substack.com' },
+    { no: '13', date: '2026年3月', title: '地図が見えてきた', url: 'https://kyoshinkajournal.substack.com/p/13' },
+    { no: '12', date: '2026年1月', title: '半年間の協進化を振り返る', url: 'https://kyoshinkajournal.substack.com/p/121' },
+    { no: '1–11', date: '2025年6月〜12月', title: '創刊〜11号（バックナンバー）', url: 'https://kyoshinkajournal.substack.com' },
+  ];
+
+  var grid = document.getElementById('journal-grid');
+  issues.forEach(function(issue) {
+    if (!issue.title) return; // タイトル未定の号はスキップ
+    var card = document.createElement('a');
+    card.href = issue.url;
+    card.className = 'journal-card';
+    card.target = '_blank';
+    card.innerHTML =
+      '<div class="journal-card-thumb">' +
+        '<div class="journal-no"><span>No.</span>' + issue.no + '</div>' +
+      '</div>' +
+      '<div class="journal-card-body">' +
+        '<p class="journal-card-date">' + issue.date + '</p>' +
+        '<p class="journal-card-title">' + issue.title + '</p>' +
+      '</div>';
+    grid.appendChild(card);
+  });
+</script>
 </html>
